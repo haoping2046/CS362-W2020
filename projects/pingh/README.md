@@ -1,1 +1,0 @@
-#Hao Ping, pingh”
