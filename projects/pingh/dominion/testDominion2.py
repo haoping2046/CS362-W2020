@@ -48,7 +48,7 @@ box["Spy"]=[Dominion.Spy()]*10
 box["Thief"]=[Dominion.Thief()]*10
 box["Throne Room"]=[Dominion.Throne_Room()]*10
 
-supply_order = testUtility.GetOrder()
+supply_order = testUtility.GetSupplyOrder()
 
 #Pick 10 cards from box to be in the supply.
 boxlist = [k for k in box]

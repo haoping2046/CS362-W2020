@@ -1,4 +1,22 @@
+import random
+from collections import defaultdict
+
 import Dominion
+
+def GetPlayers():
+    players = ["Annie", "*Ben", "*Carla"]
+    return players
+
+def GetCurses(players):
+    if len(players) > 2:
+        nV = 12
+    else:
+        nV = 8
+    return nV
+
+def GetVictoryCards(players):
+    nC = -10 + 10 * len(players)
+    return nC
 
 def GetBoxes(nV):
     #Define box
@@ -32,7 +50,7 @@ def GetBoxes(nV):
     box["Throne Room"]=[Dominion.Throne_Room()]*10
     return box
 
-def GetOrder():
+def GetSupplyOrder():
 
     supply_order = {0: ['Curse', 'Copper'], 2: ['Estate2', 'Cellar2', 'Chapel2', 'Moat2'],
                     3: ['Silver', 'Chancellor', 'Village', 'Woodcutter', 'Workshop'],
@@ -41,3 +59,11 @@ def GetOrder():
                     5: ['Duchy', 'Market', 'Council Room', 'Festival', 'Laboratory', 'Library', 'Mine', 'Witch'],
                     6: ['Gold', 'Adventurer'], 8: ['Province']}
     return supply_order
+
+def GetSupply(box, n, players):
+
+    boxlist = [k for k in box]
+    random.shuffle(boxlist)
+    random_n = boxlist[:n]
+    supply = defaultdict(list,[(k,box[k]) for k in random_n])
+    return supply
