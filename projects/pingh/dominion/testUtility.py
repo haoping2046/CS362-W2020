@@ -4,7 +4,7 @@ from collections import defaultdict
 import Dominion
 
 def GetPlayers():
-    players = ["Annie", "*Ben", "*Carla"]
+    players = ["Annie", "Ben", "Carla"]
     return players
 
 def GetCurses(players):
